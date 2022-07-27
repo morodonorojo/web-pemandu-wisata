@@ -22,6 +22,7 @@ const FasilitasCard = ({
         boxShadow:
           "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
       }}
+      onClick={() => setIsDescOpen((prev) => !prev)}
     >
       <div className="header flex flex-row justify-center items-center p-5">
         <div className="relative h-12 w-12">
@@ -50,10 +51,7 @@ const FasilitasCard = ({
           {description}
         </p>
       </div>
-      <div
-        className={`control-button w-full p-2 bg-black`}
-        onClick={() => setIsDescOpen((prev) => !prev)}
-      >
+      <div className={`control-button w-full p-2 bg-black`}>
         <ArrowDown
           className={clsx(
             "invert",
