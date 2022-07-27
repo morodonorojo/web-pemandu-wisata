@@ -1,0 +1,20 @@
+{
+  "id": "9232f48e-a2e0-4840-a295-2d3becb9589b",
+  "uid": "aut-odit-in",
+  "type": "fasilitas_ngiroboyo",
+  "data": {
+    "ordering": 2133,
+    "title": "architect impactful partnerships",
+    "icon": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72?w=900&h=500&fit=crop"
+    },
+    "description": "expedite impactful experiences",
+    "color": "#273ee2"
+  }
+}

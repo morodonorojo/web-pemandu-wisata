@@ -1,0 +1,46 @@
+{
+  "id": "fasilitas_ngiroboyo",
+  "label": "Fasilitas Ngiroboyo",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "ordering": {
+        "type": "Number",
+        "config": {
+          "label": "Ordering",
+          "placeholder": ""
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
+      "icon": {
+        "type": "Image",
+        "config": {
+          "label": "Icon",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": ""
+        }
+      },
+      "color": {
+        "type": "Color",
+        "config": {
+          "label": "Color",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

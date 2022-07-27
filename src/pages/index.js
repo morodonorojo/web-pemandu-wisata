@@ -1,10 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
 
-import ArrowDown from "../assets/icon-arrow-down.svg";
+import ArrowDown from "../assets/circle-arrow-down.svg";
 import { FasilitasCard } from "../components/Card";
+import { createClient } from "../prismic/prismicio";
 
-export default function Home() {
+export default function Home({ fasilitas }) {
+  console.log(fasilitas);
+
   return (
     <main className="bg-white text-black">
       <Head>
@@ -38,8 +41,37 @@ export default function Home() {
       </section>
 
       <section className="fasilitas w-full p-4">
-        <h2 className="font-bold">Fasilitas Pantai Ngiroboyo</h2>
+        <h2 className="font-bold my-4">Fasilitas Pantai Ngiroboyo</h2>
+        <div className="fasilitas-list w-full">
+          {fasilitas.map((item, index) => {
+            return (
+              <FasilitasCard
+                key={item.id}
+                title={item.data.title}
+                description={item.data.description}
+                icon={item.data.icon}
+                color={item.data.color}
+                className="mb-4"
+              />
+            );
+          })}
+        </div>
       </section>
     </main>
   );
+}
+
+export async function getStaticProps() {
+  const client = createClient();
+
+  const fasilitas = await client.getAllByType("fasilitas_ngiroboyo", {
+    orderings: {
+      field: "document.first_publication_date",
+      direction: "desc",
+    },
+  });
+
+  return {
+    props: { fasilitas },
+  };
 }
