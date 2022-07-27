@@ -6,8 +6,6 @@ import { FasilitasCard } from "../components/Card";
 import { createClient } from "../prismic/prismicio";
 
 export default function Home({ fasilitas }) {
-  console.log(fasilitas);
-
   return (
     <main className="bg-white text-black">
       <Head>
@@ -29,9 +27,11 @@ export default function Home({ fasilitas }) {
         </div>
         <div className="hero-text absolute w-full h-full p-4 py-12 flex flex-col justify-between">
           <div className="text-white text-center">
-            <h2 className="text-sm">Pesona Ngiroboyo</h2>
-            <h1 className="text-3xl">Tourism Information Center</h1>
-            <p className="text-sm">Pusat Informasi Wisata Pantai Ngiroboyo</p>
+            <h2 className="text-sm md:text-md">Pesona Ngiroboyo</h2>
+            <h1 className="text-3xl md:text-4xl">Tourism Information Center</h1>
+            <p className="text-sm md:text-md">
+              Pusat Informasi Wisata Pantai Ngiroboyo
+            </p>
           </div>
           <div className="text-black text-center cursor-pointer">
             <p className="text-sm">Pelajari Lebih Lanjut</p>
@@ -40,9 +40,9 @@ export default function Home({ fasilitas }) {
         </div>
       </section>
 
-      <section className="fasilitas w-full p-4">
+      <section className="fasilitas p-4 mx-auto md:max-w-3xl">
         <h2 className="font-bold my-4">Fasilitas Pantai Ngiroboyo</h2>
-        <div className="fasilitas-list w-full">
+        <div className="fasilitas-list w-full md:flex md:flex-row md:flex-wrap md:justify-center">
           {fasilitas.map((item, index) => {
             return (
               <FasilitasCard
@@ -51,7 +51,7 @@ export default function Home({ fasilitas }) {
                 description={item.data.description}
                 icon={item.data.icon}
                 color={item.data.color}
-                className="mb-4"
+                className="mb-4 md:mx-2"
               />
             );
           })}

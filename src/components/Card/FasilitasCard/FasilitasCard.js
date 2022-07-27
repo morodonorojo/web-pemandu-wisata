@@ -17,7 +17,7 @@ const FasilitasCard = ({
   return (
     <div
       {...props}
-      className={`w-full rounded-lg flex flex-col bg-[#F5F5F5] overflow-hidden md:max-w-md transition-all duration-300 ${className}`}
+      className={`w-full h-min rounded-lg flex flex-col bg-[#F5F5F5] overflow-hidden md:max-w-xs transition-all duration-300 ${className}`}
       style={{
         boxShadow:
           "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
