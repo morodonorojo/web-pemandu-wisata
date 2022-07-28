@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["tic-ngiroboyo.cdn.prismic.io"],
+    domains: ["tic-ngiroboyo.cdn.prismic.io", "images.prismic.io"],
   },
   webpack(config) {
     config.module.rules.push({

@@ -1,0 +1,32 @@
+{
+  "id": "tourism_information_officer",
+  "label": "Tourism Information Officer",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "officerName": {
+        "type": "Text",
+        "config": {
+          "label": "Officer Name",
+          "placeholder": ""
+        }
+      },
+      "officerNumber": {
+        "type": "Number",
+        "config": {
+          "label": "Officer Number",
+          "placeholder": ""
+        }
+      },
+      "photoProfile": {
+        "type": "Image",
+        "config": {
+          "label": "Photo Profile",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

@@ -1,11 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
 
-import ArrowDown from "../assets/circle-arrow-down.svg";
-import { FasilitasCard } from "../components/Card";
+import { FasilitasCard, TIOCard } from "../components/Card";
 import { createClient } from "../prismic/prismicio";
 
-export default function Home({ fasilitas }) {
+import ArrowDown from "../assets/circle-arrow-down.svg";
+
+export default function Home({ fasilitas, tio }) {
   return (
     <main className="bg-white text-black">
       <Head>
@@ -97,7 +98,7 @@ export default function Home({ fasilitas }) {
             </div>
             <h2 className="font-bold my-4 ml-2">Lokasi Pantai Ngiroboyo</h2>
           </div>
-          <p className="my-2 font-bold text-gray-custom text">
+          <p className="my-2 font-bold text-gray-custom text-sm">
             Pantai Ngiroboyo, Sambi, Sendang, Donorojo, Kabupaten Pacitan, Jawa
             Timur
           </p>
@@ -135,6 +136,27 @@ export default function Home({ fasilitas }) {
           </ul>
         </div>
       </section>
+
+      <section className="tio p-4 mx-auto md:max-w-3xl">
+        <h2 className="font-bold">Dapatkan informasi lebih lanjut</h2>
+        <p className="my-2 font-bold text-gray-custom text-sm mb-4">
+          Hubungi Tourism Information Officer kami untuk informasi terbaru dan
+          terlengkap!
+        </p>
+        <div className="list-tio flex flex-col justify-center items-center md:flex-row">
+          {tio.map((officer) => {
+            return (
+              <TIOCard
+                key={officer.id}
+                officerName={officer.data.officerName}
+                officerNumber={officer.data.officerNumber}
+                photoProfile={officer.data.photoProfile}
+                className="mb-2 md:mx-2"
+              />
+            );
+          })}
+        </div>
+      </section>
     </main>
   );
 }
@@ -149,7 +171,9 @@ export async function getStaticProps() {
     },
   });
 
+  const tio = await client.getAllByType("tourism_information_officer");
+
   return {
-    props: { fasilitas },
+    props: { fasilitas, tio },
   };
 }
