@@ -157,6 +157,11 @@ export default function Home({ fasilitas, tio }) {
           })}
         </div>
       </section>
+      <footer className="w-full text-center bg-green-custom p-4">
+        <p className="font-bold text-white">
+          KKN-PPM UGM Periode II Tahun 2022
+        </p>
+      </footer>
     </main>
   );
 }
